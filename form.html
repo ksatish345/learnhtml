@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title>first form</title>
+</head>
+<body>
+    <center>
+        <h1>Student Registeration form</h1>
+        <marquee ><h2>
+            <font color="red">s.n.s collage saharsa  </font>
+        </h2></marquee>
+        
+        <h3>(Bihar "852123")</h3>
+    <hr>
+    <hr>
+    <h3>Fill in the form !!</h3>
+    <form action="./profile.html" method="get" >
+    1. what's your First Name:* <input type="text" id="fn" value=""  ><br><br>
+    2. what's your Last Name: <input type="text" id="ln" value=""  ><br><br>
+ Full Name: <input type="text" id="fln" value="" readonly><br><br>
+ 
+    3. what's your Father's Name:* <input type="text" value=""  ><br><br>
+    4. what's your Mother's Name:* <input type="text" value="" ><br><br>
+    5. Enter your date of birth:* <input type="date" value=""  ><br><br>
+    6. Gender :* <label for="ml">male</label>
+    <input  type="radio" id="ml" name="fees" value="" checked  >
+    <label for="fm">female </label>
+    <input type="radio" id="fm" name="fees" value="">
+    <label for="ot">other </label>
+    <input type="radio" id="fm" name="fees" value=""><br><br>
+    7. choose a subject :* <select name="course"  >
+        <option value="sc">science</option>
+        <option value="mt">mathematic</option>
+        <option value="cs">computer science</option>
+        <option value="at">art</option>
+        <option value="gk">Genral knowledge</option>
+        <option value="en">english</option>
+        <option value="hn">hindi</option>
+        <option value="hr ">history</option>
+    </select><br><br>
+    8.mobile/phone :* <input type="tel" maxlength="13" value="91+"  ><br><br>
+      different number:<input type="tel" maxlength="13" value="91+"  ><br><br>
+    9. current address:* <textarea name="myadd" id="" cols="30" role="1090"></textarea><br><br>
+    10. national :<select name=""  >
+        <option value="am" >american</option>
+        <option value="id" selected>indian</option>
+        <option value="pk">pakistani</option>
+        <option value="jp">japani</option>
+        <option value="cn">chinij</option>
+        <option value="id">england</option>
+    </select><br><br>
+    11. Enter your email:  <input type="email" value="" placeholder="email"  ><br><br>
+
+    12. Enter your password:<input type="password" value="" placeholder="password" id="password" >
+    <button id="pbutton" onclick="show()">show</button><br><br>
+                           
+    13.Confirm password:
+            <input type="password" id="cpassword" placeholder="Confirm your password">
+            <button type="button" id="cpbutton" class="toggle-button">Show</button>  <br><br>
+ 
+     <input type="reset" value="reset" class="submit-button" >
+     <input type="submit" value="register"class="submit-button"> <br><br>
+    
+    </form>
+</center>
+<script>
+    
+document.addEventListener('DOMContentLoaded', function() {
+    const password = document.getElementById('pbutton');
+    const button = document.getElementById('password');
+    
+    const cPassword = document.getElementById('cpbutton');
+    const cbutton = document.getElementById('cpassword');
+
+    function toggleVisibility(button, input) {
+        const type = input.type === 'password' ? 'text' : 'password';
+        input.type = type;
+        button.textContent = type === 'password' ? 'Show' : 'Hide';
+        button.classList.toggle('hide');
+    }
+
+    password.addEventListener('click', function() {
+        toggleVisibility(this, button);
+    });
+
+    cPassword.addEventListener('click', function() {
+        toggleVisibility(this, cbutton);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const firstNameInput = document.getElementById('fn');
+    const lastNameInput = document.getElementById('ln');
+    const fullNameText = document.getElementById('fln');
+
+    function updateFullName() {
+        const firstName = firstNameInput.value.trim();
+        const lastName = lastNameInput.value.trim();
+       
+     fullNameText.textContent =`${firstName} ${lastName}`;
+     document.getElementById('fln').value=fullNameText.textContent;
+    }
+
+    firstNameInput.addEventListener('input', updateFullName);
+    lastNameInput.addEventListener('input', updateFullName);
+});
+</script>
+<style>.submit-button {
+    width: 10%;
+    padding: 10px;
+    background-color: #ff003c; /* Background color */
+    color: white; /* Font color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.submit-button:hover {
+    background-color: #0056b3; /* Background color on hover */
+}
+</style>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="printData()" >
+        1. what's your First Name:* <input type="text" id="fn" value=""  ><br><br>
+        2. what's your Last Name: <input type="text" id="ln" value=""  ><br><br> 
+        <input type="reset" value="reset" >
+        <input type="submit" value="register"s> <br><br>
+       
+       </form> 
+       <script>
+function printData(){
+
+    const firstname=document.getElementById("fn");
+    const lastname=document.getElementById("ln");
+    document.write(firstname.value+" "+lastname.value);
+    
+}
+
+       </script> 
+</body>
+</html>

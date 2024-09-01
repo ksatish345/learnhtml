@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Combine Forms</title>
+</head>
+<body>
+	<h2>Enter your details:</h2>
+	<form>
+		<input type="text" id="firstName" placeholder="First Name" />
+		<input type="text" id="lastName" placeholder="Last Name" />
+		<input type="number" id="num1" placeholder="Number 1" />
+		<input type="number" id="num2" placeholder="Number 2" />
+		<button onclick="combineDetails()">Submit</button>
+		<h2>Results:</h2>
+		<div id="fullName"></div>
+		<div id="result"></div>
+	</form>
+
+	<script>
+		function combineDetails() {
+			var firstName = document.getElementById("firstName").value;
+			var lastName = document.getElementById("lastName").value;
+			var fullName = firstName + " " + lastName;
+			document.getElementById("fullName").innerHTML = "Full Name: " + fullName;
+
+			var num1 = parseFloat(document.getElementById("num1").value);
+			var num2 = parseFloat(document.getElementById("num2").value);
+			var result = num1 + num2;
+			document.getElementById("result").innerHTML = "Result: " + result;
+		}
+	</script>
+</body>
+</html>
